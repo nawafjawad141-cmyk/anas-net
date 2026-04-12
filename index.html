@@ -94,19 +94,48 @@
     </style>
 </head>
 <body>
-
-    <div class="screen">
-        <div class="slider-container">
-            <div class="slide active" style="background-image: url('1.jpg');">
-                <div class="slide-overlay">سرعات خيالية تصل إلى 100 ميجا 🚀</div>
-            </div>
-            <div class="slide" style="background-image: url('2.jpg');">
-                <div class="slide-overlay">أرخص الأسعار وأقوى العروض 💎</div>
-            </div>
-            <div class="slide" style="background-image: url('3.jpg');">
-                <div class="slide-overlay">تغطية واسعة وثبات مستمر ✅</div>
-            </div>
+<div class="screen">
+    <div class="slider-container">
+        <div class="slide active" style="background-image: url('1.jpg');">
+            <div class="slide-overlay">سرعات خيالية تصل إلى 100 ميجا 🚀</div>
         </div>
+        <div class="slide" style="background-image: url('2.jpg');">
+            <div class="slide-overlay">أرخص الأسعار وأقوى العروض 💎</div>
+        </div>
+        <div class="slide" style="background-image: url('3.jpg');">
+            <div class="slide-overlay">تغطية واسعة وثبات مستمر ✅</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showNextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // تغيير الصورة كل 3 ثوانٍ
+    setInterval(showNextSlide, 3000);
+</script>
+
+<style>
+    /* تأكد من وجود هذا التنسيق في الـ CSS الخاص بك لكي تظهر الصور */
+    .slide {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .slide.active {
+        display: block; /* هذا السطر هو ما يجعل الصورة النشطة تظهر */
+    }
+</style>
+
         
         <div class="content">
             <div class="net-name">شبكة أنس نت اللاسلكية</div>
